@@ -1,20 +1,20 @@
 <template>
   <div>
-    <h1>Edit Post</h1>
-    <form @submit.prevent="updatePost">
+    <h1>Edit Note</h1>
+    <form @submit.prevent="updateNote">
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label>Post Title:</label>
-            <input type="text" class="form-control" v-model="post.title" />
+            <label>Note Title:</label>
+            <input type="text" class="form-control" v-model="note.title" />
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-md-6">
           <div class="form-group">
-            <label>Post Body:</label>
-            <textarea class="form-control" v-model="post.body" rows="5"></textarea>
+            <label>Note Body:</label>
+            <textarea class="form-control" v-model="note.body" rows="5"></textarea>
           </div>
         </div>
       </div>
@@ -30,20 +30,20 @@
 export default {
   data() {
     return {
-      post: {}
+      note: {}
     };
   },
   created() {
-    const uri = `http://localhost:4000/posts/edit/${this.$route.params.id}`;
+    const uri = `http://localhost:4000/notes/edit/${this.$route.params.id}`;
     this.axios.get(uri).then(response => {
-      this.post = response.data;
+      this.note = response.data;
     });
   },
   methods: {
-    updatePost() {
-      const uri = `http://localhost:4000/posts/update/${this.$route.params.id}`;
-      this.axios.post(uri, this.post).then(() => {
-        this.$router.push({ name: "posts" });
+    updateNote() {
+      const uri = `http://localhost:4000/notes/update/${this.$route.params.id}`;
+      this.axios.post(uri, this.note).then(() => {
+        this.$router.push({ name: "notes" });
       });
     }
   }
