@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Create A Note</h1>
     <form @submit.prevent="addNote">
       <div class="row">
         <div class="col-md-6">
@@ -18,7 +17,6 @@
           </div>
         </div>
       </div>
-      <br />
       <div class="form-group">
         <button class="btn btn-primary">Create</button>
       </div>

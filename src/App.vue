@@ -1,15 +1,5 @@
 <template>
   <div class="container">
-    <nav class="navbar navbar-expand-sm bg-light navbar-light">
-      <ul class="nav navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="/notes">Notes</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/create">Create</a>
-        </li>
-      </ul>
-    </nav>
     <br />
     <transition name="fade">
       <router-view />

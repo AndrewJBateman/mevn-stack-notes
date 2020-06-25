@@ -37,6 +37,8 @@
 * [Vue CLI v4](https://cli.vuejs.org/)
 * [Axios v0.19.2](https://github.com/axios/axios), a promise-based http client, used to consume API data.
 * [Vue DevTools extension for Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+* [Vue moment](https://github.com/brockpetrie/vue-moment#readme) to convert UTC date format
+* [Material svg icons](https://material.io/resources/icons/?search=cale&icon=event_note&style=baseline)
 
 **Backend:**
 
@@ -81,11 +83,12 @@ router.post("/", async (req, res) => {
 ## :cool: Features
 
 * Front and backends can be run with one command using concurrently set up in package.json
+* Display of card array is responsive
 
 ## :clipboard: Status & To-Do List
 
 * Status: Working.
-* To-Do: Backend: separate controllers from routes. Add date with svg on card??, replace nav with add button, show total notes.length at top, dropdown categories - add to model??
+* To-Do: Center on mobile. show total notes.length at top, dropdown categories - add to model?? Add concurrently dev
 
 ## :clap: Inspiration
 
