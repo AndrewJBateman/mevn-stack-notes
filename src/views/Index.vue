@@ -1,27 +1,36 @@
 <template>
   <div>
     <div class="d-flex justify-content-center">
-      <button
-        type="button"
-        class="btn btn-info btn-md"
-        href="/create"
-        @click.prevent="showNoteAdd()"
-      >
-        <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-          <path d="M0 0h24v24H0z" fill="none" />
-          <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-        </svg>
-      </button>
+      <div class="alert alert-primary border-primary p-2" role="alert">
+        <h4 class="alert-heading text-center">Notes Hub <button
+            type="button"
+            class="btn btn-outline-light btn-sm"
+            href="/create"
+            @click.prevent="showNoteAdd()"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+              <path d="M0 0h24v24H0z" fill="none" />
+              <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+            </svg>
+          </button></h4>
+        <hr class="m-2"/>
+        <p class="mb-0 text-center">
+          You have
+          <span class="badge badge-pill badge-light">{{ this.noteNumber }}</span>
+          {{ notePlural }}
+
+        </p>
+      </div>
     </div>
 
     <div class="container-fluid mt-3">
-      <div class="row justify-content-left">
+      <div class="row justify-content-center">
         <div
           class="col-auto mb-3 pl-2 pr-2 justify-content-center"
           v-for="note in notes"
           :key="note._id"
         >
-          <div class="card border-primary" style="width: 15rem;">
+          <div class="card border-primary" style="width: 16rem;">
             <div class="card-body text-white bg-secondary p-2">
               <h5 class="card-title">{{ note.title }}</h5>
               <p class="card-text">{{ note.body }}</p>
@@ -42,7 +51,7 @@
                     />
                     <path d="M12.5 7H11v6l5.25 3.15.75-1.23-4.5-2.67z" />
                   </svg>
-                  {{ note.date | moment("MMMM Do YYYY") }}
+                  {{ note.date | moment("Do MMMM YYYY") }}
                 </div>
                 <router-link
                   :to="{name: 'edit', params: { id: note._id }}"
@@ -101,20 +110,28 @@
 export default {
   data() {
     return {
-      notes: []
+      notes: [],
+      noteNumber: 0,
+      notePlural: ""
     };
   },
-  created() {
-    const uri = "http://localhost:4000/notes";
-    this.axios.get(uri).then(response => {
-      this.notes = response.data;
-    });
+  created: function() {
+    this.fetchTodos();
   },
   methods: {
+    fetchTodos() {
+      const uri = "http://localhost:4000/notes";
+      this.axios.get(uri).then(response => {
+        this.notes = response.data;
+        this.noteNumber = this.notes.length;
+        this.notePlural = this.noteNumber === 1 ? "note" : "notes";
+      });
+    },
+
     deleteNote(id) {
       const uri = `http://localhost:4000/notes/delete/${id}`;
       this.axios.delete(uri).then(response => {
-        this.notes.splice(this.notes.indexOf(id), 1);
+        this.fetchTodos();
       });
     },
     showNoteAdd() {

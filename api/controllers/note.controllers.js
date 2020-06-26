@@ -59,11 +59,9 @@ exports.post_updated_note = async (req, res) => {
 // delete note using DELETE
 exports.delete_note = async (req, res) => {
   const { id } = req.params;
-  try {
-    const removed = await Note.findByIdAndDelete(id);
-    if (!removed) throw Error("Error deleting notes item");
-    res.status(200).json(removed);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
+  Note.findByIdAndDelete(id)
+    .then(result => {
+      res.status(200).json([]);
+    })
+    .catch(error => console.log(error));
 };

@@ -3,12 +3,12 @@ const app = express();
 const bodyParser = require("body-parser");
 const cors = require("cors");
 const mongoose = require("mongoose");
-const { DB, PORT } = require("./config/config");
+const { PORT, mongoUri } = require("./config/config");
 const noteRoute = require('./routes/note.routes');
 
 mongoose.Promise = global.Promise;
 mongoose
-  .connect(DB, {
+  .connect(mongoUri, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,

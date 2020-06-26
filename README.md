@@ -21,7 +21,7 @@
 ## :books: General info
 
 * Axios used to send/receive data from MongoDB backend
-* Data displayed on a Vue frontend using data-binding and a v-for loop.
+* A list of notes is displayed on a Vue frontend using data-binding and a v-for loop. Clicking on the + icon in the header alert box navigates to an add note page. Once note is added then list of notes is reloaded.
 
 ## :camera: Screenshots
 
@@ -36,7 +36,9 @@
 * [Vue Router v3](https://router.vuejs.org/) the official router for Vue.js
 * [Vue CLI v4](https://cli.vuejs.org/)
 * [Axios v0.19.2](https://github.com/axios/axios), a promise-based http client, used to consume API data.
+* [vue-axios](https://www.npmjs.com/package/vue-axios) for integrating axios to Vuejs
 * [Vue DevTools extension for Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
+* [Bootstrap v4](https://getbootstrap.com/) components and styles
 * [Vue moment](https://github.com/brockpetrie/vue-moment#readme) to convert UTC date format
 * [Material svg icons](https://material.io/resources/icons/?search=cale&icon=event_note&style=baseline)
 
@@ -45,23 +47,19 @@
 * [Express v4](https://expressjs.com/)
 * [Mongoose v5](https://mongoosejs.com/)
 * [cors](https://www.npmjs.com/package/cors) Cross Origin Resource Sharing Connect/Express middleware
-* [Morgan](https://www.npmjs.com/package/morgan) HTTP request logger middleware for node.js
+* [body parser](https://www.npmjs.com/package/body-parser) Node.js body parsing middleware
 
 ## :floppy_disk: Setup
 
 **/ Frontend:**
 
 * `npm run lint` to lint files
-* `npm run serve` to run server. Navigate to `http://localhost:8080/`. The app will automatically reload if you change any of the source files.
+* `npm run client` to run server. Navigate to `http://localhost:8080/`. The app will automatically reload if you change any of the source files.
 * `npm run build` to create build file
 
 **/api Backend:**
 
 * `nodemon server.js` to run node.js server. Navigate to `http://localhost:3000/` to see JSON object with todos or an empty array. CRUD operations can be performed on this backend using the [Postman](https://www.postman.com/) API dev tool.
-
-**/ Full stack:**
-
-* `npm run dev` to run client and backend server concurrently. Navigate to `http://localhost:8080/` to see frontend and `http://localhost:3000/` to see backend.
 
 ## :computer: Code Examples
 
@@ -88,7 +86,7 @@ router.post("/", async (req, res) => {
 ## :clipboard: Status & To-Do List
 
 * Status: Working.
-* To-Do: Center on mobile. show total notes.length at top, dropdown categories - add to model?? Add concurrently dev
+* To-Do: deploy
 
 ## :clap: Inspiration
 
