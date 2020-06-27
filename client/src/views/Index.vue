@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="d-flex justify-content-center">
-      <div class="alert alert-primary border-primary p-2" role="alert">
+      <div class="alert alert-primary border-primary p-2 m-0" role="alert">
         <h4 class="alert-heading text-center">Notes Hub <button
             type="button"
             class="btn btn-outline-light btn-sm"
@@ -14,7 +14,7 @@
             </svg>
           </button></h4>
         <hr class="m-2"/>
-        <p class="mb-0 text-center">
+        <p class="mb-0 text-center" v-if="this.noteNumber">
           You have
           <span class="badge badge-pill badge-light">{{ this.noteNumber }}</span>
           {{ notePlural }}
@@ -120,7 +120,7 @@ export default {
   },
   methods: {
     fetchTodos() {
-      const uri = "http://localhost:4000/notes";
+      const uri = "/notes";
       this.axios.get(uri).then(response => {
         this.notes = response.data;
         this.noteNumber = this.notes.length;
@@ -129,13 +129,13 @@ export default {
     },
 
     deleteNote(id) {
-      const uri = `http://localhost:4000/notes/delete/${id}`;
+      const uri = `/notes/delete/${id}`;
       this.axios.delete(uri).then(response => {
         this.fetchTodos();
       });
     },
     showNoteAdd() {
-      location.href = "/create";
+      this.$router.push('create');
     }
   }
 };

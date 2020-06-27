@@ -33,7 +33,7 @@ export default {
   },
   methods: {
     addNote() {
-      const uri = "http://localhost:4000/notes/add";
+      const uri = "/notes/add";
       this.axios.post(uri, this.note).then(() => {
         this.$router.push({ name: "notes" });
       });

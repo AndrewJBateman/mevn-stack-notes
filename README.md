@@ -25,8 +25,9 @@
 
 ## :camera: Screenshots
 
-![Example screenshot](./img/frontend.png)
+![Example screenshot](./img/notes.png)
 ![Example screenshot](./img/mongodb.png)
+![Example screenshot](./img/backend.png)
 
 ## :signal_strength: Technologies
 
@@ -59,34 +60,43 @@
 
 **/api Backend:**
 
-* `nodemon server.js` to run node.js server. Navigate to `http://localhost:3000/` to see JSON object with todos or an empty array. CRUD operations can be performed on this backend using the [Postman](https://www.postman.com/) API dev tool.
+* `nodemon server.js` to run node.js server. Navigate to `http://localhost:4000/` to see JSON object with todos or an empty array (refresh after changes - does not auto-update). CRUD operations can be performed on this backend using the [Postman](https://www.postman.com/) API dev tool.
+
+**/ Full stack:**
+
+* `npm run dev` to run client and backend server concurrently. Navigate to `http://localhost:8080/` to see frontend and `http://localhost:4000/` to see backend (refresh after changes - does not auto-update).
 
 ## :computer: Code Examples
 
-* POST route
+* `note.controllers.js` - add new note to database using POST
 
 ```javascript
-router.post("/", async (req, res) => {
-  const newChecklistItem = new ChecklistItem(req.body);
+
+exports.post_note = async (req, res) => {
+  const newNote = new Note(req.body);
   try {
-    const checklistItem = await newChecklistItem.save();
-    if (!checklistItem) throw new Error("Error saving checklist item");
-    res.status(200).json(checklistItem);
+    const note = await newNote.save();
+    if (!note) throw new Error("Error saving note item");
+    res.status(200).json(note);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
-});
+};
 ```
 
 ## :cool: Features
 
-* Front and backends can be run with one command using concurrently set up in package.json
-* Display of card array is responsive
+* Heroku deployment saves user notes using Heroku MongoDB database extension.
+* In dev - Front and backends can be run with one command using concurrently set up in package.json
+* Display of card array is responsive so they wrap around nicely as screen size changes
+* [Deployed to Heroku](https://mevn-stack-notes.herokuapp.com/)
+* Simple 'Notes Hub' Top display tells user how many notes there are in total
+* backend code separates controller functions from routes
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working.
-* To-Do: deploy
+* Status: Working. Deployed.
+* To-Do: add cancel button to edit vue. add max note title (40?) and body length (300?) etc. add characters remaining? Make sure all notes in line are same height. Add app info nav link
 
 ## :clap: Inspiration
 

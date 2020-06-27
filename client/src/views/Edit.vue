@@ -34,14 +34,14 @@ export default {
     };
   },
   created() {
-    const uri = `http://localhost:4000/notes/edit/${this.$route.params.id}`;
+    const uri = `/notes/edit/${this.$route.params.id}`;
     this.axios.get(uri).then(response => {
       this.note = response.data;
     });
   },
   methods: {
     updateNote() {
-      const uri = `http://localhost:4000/notes/update/${this.$route.params.id}`;
+      const uri = `/notes/update/${this.$route.params.id}`;
       this.axios.post(uri, this.note).then(() => {
         this.$router.push({ name: "notes" });
       });
