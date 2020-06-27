@@ -2,23 +2,38 @@
   <div>
     <div class="d-flex justify-content-center">
       <div class="alert alert-primary border-primary p-2 m-0" role="alert">
-        <h4 class="alert-heading text-center">Notes Hub <button
-            type="button"
-            class="btn btn-outline-light btn-sm"
-            href="/create"
-            @click.prevent="showNoteAdd()"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
-              <path d="M0 0h24v24H0z" fill="none" />
-              <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-            </svg>
-          </button></h4>
-        <hr class="m-2"/>
+        <div class="d-flex justify-content-between">
+          <h4 class="alert-heading text-center">
+            Notes Hub
+            <button
+              type="button"
+              class="btn btn-outline-light btn-sm"
+              @click.prevent="showNoteAdd()"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="btn btn-outline-light btn-sm ml-2"
+              @click.prevent="showInfo()"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24">
+                <path d="M0 0h24v24H0z" fill="none" />
+                <path
+                  d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"
+                />
+              </svg>
+            </button>
+          </h4>
+        </div>
+        <hr class="m-2" />
         <p class="mb-0 text-center" v-if="this.noteNumber">
           You have
-          <span class="badge badge-pill badge-light">{{ this.noteNumber }}</span>
+          <span class="badge badge-pill badge-light" style="font-size: 18px;">{{ this.noteNumber }}</span>
           {{ notePlural }}
-
         </p>
       </div>
     </div>
@@ -59,8 +74,8 @@
                 >
                   <svg
                     class="bi bi-pencil"
-                    width="1em"
-                    height="1em"
+                    width="1.5em"
+                    height="1.5em"
                     viewBox="0 0 16 16"
                     fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
@@ -82,8 +97,8 @@
                 >
                   <svg
                     class="bi bi-trash"
-                    width="1em"
-                    height="1em"
+                    width="1.5em"
+                    height="1.5em"
                     viewBox="0 0 16 16"
                     fill="currentColor"
                     xmlns="http://www.w3.org/2000/svg"
@@ -135,7 +150,10 @@ export default {
       });
     },
     showNoteAdd() {
-      this.$router.push('create');
+      this.$router.push("create");
+    },
+    showInfo() {
+      this.$router.push("info");
     }
   }
 };

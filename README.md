@@ -1,6 +1,6 @@
 # :zap: MEVN Stack Notes
 
-* Full stack app using MongoDB, Express, Vue and Node.js to perform Create, Read, Update and Delete (CRUD) operations on strings of data.
+* This app displays simple text notes in a grid of Bootstrap cards. It uses the MongoDB, Express, Vue & Node.js (MEVN) stack to allow the user to perform Create, Read, Update and Delete (CRUD) operations.
 
 **Note:** to open web links in a new window use: _ctrl+click on link_
 
@@ -20,8 +20,9 @@
 
 ## :books: General info
 
-* Axios used to send/receive data from MongoDB backend
-* A list of notes is displayed on a Vue frontend using data-binding and a v-for loop. Clicking on the + icon in the header alert box navigates to an add note page. Once note is added then list of notes is reloaded.
+* Axios used to send/receive data from the MongoDB backend
+* A responsive grid of notes is displayed on the Vue frontend using data-binding and a v-for loop. Clicking on the + icon in the header alert box navigates to an 'add note' page. Once a note is added then the grid of notes is reloaded.
+* There is an app info page
 
 ## :camera: Screenshots
 
@@ -90,12 +91,12 @@ exports.post_note = async (req, res) => {
 * In dev - Front and backends can be run with one command using concurrently set up in package.json
 * Display of card array is responsive so they wrap around nicely as screen size changes
 * [Deployed to Heroku](https://mevn-stack-notes.herokuapp.com/)
-* Simple 'Notes Hub' Top display tells user how many notes there are in total
+* Simple 'Notes Hub' tells user how many notes there are and lets them navigate to the add note or app info pages
 * backend code separates controller functions from routes
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working. Deployed.
+* Status: Working. Deployed. Dependencies updated and no vulnerabilities
 * To-Do: add cancel button to edit vue. add max note title (40?) and body length (300?) etc. add characters remaining? Make sure all notes in line are same height. Add app info nav link
 
 ## :clap: Inspiration
