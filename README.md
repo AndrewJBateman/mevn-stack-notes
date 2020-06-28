@@ -1,6 +1,6 @@
 # :zap: MEVN Stack Notes
 
-* This app displays simple text notes in a grid of Bootstrap cards. It uses the MongoDB, Express, Vue & Node.js (MEVN) stack to allow the user to perform Create, Read, Update and Delete (CRUD) operations.
+* This app displays simple text notes in a grid of Bootstrap cards. It uses the MongoDB, Express, Vue & Node.js (MEVN) stack to perform Create, Read, Update and Delete (CRUD) operations.
 
 **Note:** to open web links in a new window use: _ctrl+click on link_
 
@@ -21,14 +21,17 @@
 ## :books: General info
 
 * Axios used to send/receive data from the MongoDB backend
-* A responsive grid of notes is displayed on the Vue frontend using data-binding and a v-for loop. Clicking on the + icon in the header alert box navigates to an 'add note' page. Once a note is added then the grid of notes is reloaded.
+* A responsive grid of notes is displayed on the Vue frontend using data-binding and a v-for loop. Once a note is added then the grid of notes is reloaded.
 * There is an app info page
 
 ## :camera: Screenshots
 
 ![Example screenshot](./img/notes.png)
+![Example screenshot](./img/create.png)
+![Example screenshot](./img/edit.png)
 ![Example screenshot](./img/mongodb.png)
 ![Example screenshot](./img/backend.png)
+![Example screenshot](./img/info.png)
 
 ## :signal_strength: Technologies
 
@@ -87,17 +90,20 @@ exports.post_note = async (req, res) => {
 
 ## :cool: Features
 
-* Heroku deployment saves user notes using Heroku MongoDB database extension.
-* In dev - Front and backends can be run with one command using concurrently set up in package.json
+* [Heroku deployment](https://mevn-stack-notes.herokuapp.com/) saves user notes using Heroku MongoDB database extension
+* Heroku auto updates deployment when I commit code updates to Github
+* In dev - Front and backends are run with one command using concurrently set up in package.json
 * Display of card array is responsive so they wrap around nicely as screen size changes
-* [Deployed to Heroku](https://mevn-stack-notes.herokuapp.com/)
 * Simple 'Notes Hub' tells user how many notes there are and lets them navigate to the add note or app info pages
+* note max title length set to 23 so shows on 1 line in card
+* note max content length set to 280, same as a twitter post
 * backend code separates controller functions from routes
+* Updating a note will automatically update the date so it goes to the front of the (date-sorted) notes list
 
 ## :clipboard: Status & To-Do List
 
 * Status: Working. Deployed. Dependencies updated and no vulnerabilities
-* To-Do: add cancel button to edit vue. add max note title (40?) and body length (300?) etc. add characters remaining? Make sure all notes in line are same height. Add app info nav link
+* To-Do: resolve note.body.length error when in note edit mode
 
 ## :clap: Inspiration
 

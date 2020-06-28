@@ -44,6 +44,7 @@ exports.post_updated_note = async (req, res) => {
     else {
       note.title = req.body.title;
       note.body = req.body.body;
+      note.date = Date.now();
       note
         .save()
         .then(() => {

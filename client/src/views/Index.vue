@@ -36,7 +36,7 @@
     <div class="container-fluid mt-3">
       <div class="row justify-content-center">
         <div
-          class="col-auto mb-3 pl-2 pr-2 justify-content-center"
+          class="col-auto mb-3 pl-2 pr-2 justify-content-center d-flex align-items-stretch"
           v-for="note in notes"
           :key="note._id"
         >
