@@ -90,9 +90,10 @@ export default {
       this.note = response.data;
       this.initialBodyLength = this.note.body.length;
       this.remainingCount = 280 - this.initialBodyLength;
+      this.calcRemaining();
     });
-    this.calcRemaining();
   },
+
   methods: {
     updateNote() {
       // this.note.date = Date.now();
