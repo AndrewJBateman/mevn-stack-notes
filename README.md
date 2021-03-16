@@ -87,7 +87,7 @@
 **/ Full stack:**
 
 * `npm run dev` to run client and backend server concurrently. Navigate to `http://localhost:8080/` to see frontend and `http://localhost:4000/` to see backend (refresh after changes - does not auto-update).
-* Heroku `heroku login` to login,
+* Heroku `heroku login` to login, `git add .` then `git commit -m "commit message..."` then `git push heroku master` to deploy to Heroku
 
 ## :computer: Code Examples
 
@@ -121,8 +121,8 @@ exports.post_note = async (req, res) => {
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working. Deployed. Dependencies updated and no vulnerabilities
-* To-Do: Nothing
+* Status: Working. Deployed. Dependencies updated and no vulnerabilities or error messages
+* To-Do: Consider alternative to Bootstrap to make app lighter
 
 ## :clap: Inspiration
 
