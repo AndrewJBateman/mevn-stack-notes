@@ -3,6 +3,12 @@
 * This app displays simple text notes in a grid of Bootstrap cards.
 * Uses the MongoDB, Express, Vue & Node.js (MEVN) stack to perform Create, Read, Update and Delete (CRUD) operations.
 
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/mevn-stack-notes?style=for-the-badge)
+![GitHub issues](https://img.shields.io/github/issues/AndrewJBateman/mevn-stack-notes?style=for-the-badge)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/mevn-stack-notes?style=for-the-badge)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/mevn-stack-notes?style=for-the-badge)
+![GitHub release (latest by date)](https://img.shields.io/github/v/release/AndrewJBateman/mevn-stack-notes?style=for-the-badge)
+
 **Note:** to open web links in a new window use: _ctrl+click on link_
 
 ## :page_facing_up: Table of contents
@@ -12,6 +18,9 @@
   * [:books: General info](#books-general-info)
   * [:camera: Screenshots](#camera-screenshots)
   * [:signal_strength: Technologies](#signal_strength-technologies)
+    * [Frontend](#frontend)
+    * [Backend](#backend)
+    * [Full-Stack](#full-stack)
   * [:floppy_disk: Setup](#floppy_disk-setup)
   * [:computer: Code Examples](#computer-code-examples)
   * [:cool: Features](#cool-features)
@@ -24,6 +33,7 @@
 * Axios used to send/receive data from the MongoDB backend
 * A responsive grid of notes is displayed on the Vue frontend using data-binding and a v-for loop. Once a note is added then the grid of notes is reloaded.
 * There is an app info. page
+* The app is deployed on the Heroku 18 stack, based on Ubuntu 18.04
 
 ## :camera: Screenshots
 
@@ -36,39 +46,48 @@
 
 ## :signal_strength: Technologies
 
-**Frontend:**
+### Frontend
 
 * [Vue framework v2](https://vuejs.org/)
 * [Vue Router v3](https://router.vuejs.org/) the official router for Vue.js
 * [Vue CLI v4](https://cli.vuejs.org/)
-* [Axios v0.21.0](https://github.com/axios/axios), a promise-based http client, used to consume API data.
+* [Axios v0.21.1](https://github.com/axios/axios), a promise-based http client, used to consume API data.
 * [vue-axios v3](https://www.npmjs.com/package/vue-axios) for integrating axios to Vuejs
 * [Vue DevTools extension for Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
 * [Bootstrap v4](https://getbootstrap.com/) components and styles
 * [Vue moment v4](https://github.com/brockpetrie/vue-moment#readme) to convert UTC date format
 * [Material svg icons](https://material.io/resources/icons/?search=cale&icon=event_note&style=baseline)
 
-**Backend:**
+### Backend
 
 * [Express v4](https://expressjs.com/)
 * [Mongoose v5](https://mongoosejs.com/)
 * [cors v2](https://www.npmjs.com/package/cors) Cross Origin Resource Sharing Connect/Express middleware
+* [Node v14.15.0](https://nodejs.org/en/) JavaScript runtime built on Chrome's V8 JavaScript engine.
+
+### Full-Stack
+
+* [Heroku v7](https://www.heroku.com)
 
 ## :floppy_disk: Setup
 
-**/ Frontend:**
+**Frontend:**
 
-* `npm run lint` to lint files
-* `npm run client` to run server. Navigate to `http://localhost:8080/`. The app will automatically reload if you change any of the source files.
+* from `/client` directory: `npm run lint` to lint files
+* `npm run client` to run server.
+* Navigate to `http://localhost:8080/`. The app will automatically reload if you change any of the source files.
 * `npm run build` to create build file
 
 **/api Backend:**
 
-* `nodemon server.js` to run node.js server. Navigate to `http://localhost:4000/` to see JSON object with todos or an empty array (refresh after changes - does not auto-update). CRUD operations can be performed on this backend using the [Postman](https://www.postman.com/) API dev tool.
+* `nodemon server.js` to run node.js server.
+* Navigate to `http://localhost:4000/` to see JSON object with todos or an empty array (refresh after changes - does not auto-update).
+* CRUD operations can be performed on this backend using the [Postman](https://www.postman.com/) API dev tool.
 
 **/ Full stack:**
 
 * `npm run dev` to run client and backend server concurrently. Navigate to `http://localhost:8080/` to see frontend and `http://localhost:4000/` to see backend (refresh after changes - does not auto-update).
+* Heroku `heroku login` to login,
 
 ## :computer: Code Examples
 

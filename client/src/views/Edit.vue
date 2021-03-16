@@ -8,9 +8,11 @@
           You have
           <span
             class="badge badge-pill badge-light text-dark"
-            style="font-size: 0.9em;"
-            v-bind:class="{'text-danger': hasError }"
-          >{{ remainingCount }}</span> characters
+            style="font-size: 0.9em"
+            v-bind:class="{ 'text-danger': hasError }"
+            >{{ remainingCount }}</span
+          >
+          characters
         </p>
       </div>
     </div>
@@ -53,14 +55,24 @@
       <div class="row justify-content-center">
         <div class="form-group">
           <div class="col-md-6 d-flex">
-            <button class="btn btn-primary mr-4" :disabled="isDisabled">Update</button>
+            <button class="btn btn-primary mr-4" :disabled="isDisabled">
+              Update
+            </button>
             <button
               type="button"
               class="btn btn-warning mr-4"
               :disabled="!note.title && !note.body"
               @click.prevent="clearInputs()"
-            >Clear</button>
-            <button type="button" class="btn btn-danger" @click.prevent="backToNotes()">Cancel</button>
+            >
+              Clear
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              @click.prevent="backToNotes()"
+            >
+              Cancel
+            </button>
           </div>
 
           <!-- <button class="btn btn-primary">Update</button> -->
@@ -86,7 +98,7 @@ export default {
   },
   created() {
     const uri = `/notes/edit/${this.$route.params.id}`;
-    this.axios.get(uri).then(response => {
+    this.axios.get(uri).then((response) => {
       this.note = response.data;
       this.initialBodyLength = this.note.body.length;
       this.remainingCount = 280 - this.initialBodyLength;
@@ -110,13 +122,13 @@ export default {
     backToNotes() {
       this.$router.push("/");
     },
-    countdown: function() {
+    countdown: function () {
       this.calcRemaining();
       this.hasError = this.remainingCount < 5;
       this.isDisabled = this.note.title.length < 4 || this.note.body.length < 4;
     },
     async calcRemaining() {
-      this.remainingCount = this.maxCount - this.note.body.length;
+      this.remainingCount = this.note.body.length == null | 0 ? this.maxCount : this.maxCount - this.note.body.length;
     }
   }
 };

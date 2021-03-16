@@ -34,8 +34,6 @@ app.use("/notes", noteRoute);
 if (process.env.NODE_ENV === "production") {
 	// static folder
 	app.use(express.static("client/dist"));
-
-	// Handle SPA
 	app.get("*", (req, res) => {
 		res.sendFile(path.resolve(__dirname, "client", "dist", "index.html"));
 	});
