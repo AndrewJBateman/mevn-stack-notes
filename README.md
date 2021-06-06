@@ -2,14 +2,12 @@
 
 * This app displays simple text notes in a grid of Bootstrap cards.
 * Uses the MongoDB, Express, Vue & Node.js (MEVN) stack to perform Create, Read, Update and Delete (CRUD) operations.
+* **Note:** to open web links in a new window use: _ctrl+click on link_
 
-![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/mevn-stack-notes?style=for-the-badge)
-![GitHub issues](https://img.shields.io/github/issues/AndrewJBateman/mevn-stack-notes?style=for-the-badge)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/mevn-stack-notes?style=for-the-badge)
-![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/mevn-stack-notes?style=for-the-badge)
-![GitHub release (latest by date)](https://img.shields.io/github/v/release/AndrewJBateman/mevn-stack-notes?style=for-the-badge)
-
-**Note:** to open web links in a new window use: _ctrl+click on link_
+![GitHub repo size](https://img.shields.io/github/repo-size/AndrewJBateman/mevn-stack-notes?style=plastic)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/AndrewJBateman/mevn-stack-notes?style=plastic)
+![GitHub Repo stars](https://img.shields.io/github/stars/AndrewJBateman/mevn-stack-notes?style=plastic)
+![GitHub last commit](https://img.shields.io/github/last-commit/AndrewJBateman/mevn-stack-notes?style=plastic)
 
 ## :page_facing_up: Table of contents
 
@@ -26,6 +24,7 @@
   * [:cool: Features](#cool-features)
   * [:clipboard: Status & To-Do List](#clipboard-status--to-do-list)
   * [:clap: Inspiration](#clap-inspiration)
+  * [:file_folder: License](#file_folder-license)
   * [:envelope: Contact](#envelope-contact)
 
 ## :books: General info
@@ -63,7 +62,7 @@
 * [Express v4](https://expressjs.com/)
 * [Mongoose v5](https://mongoosejs.com/)
 * [cors v2](https://www.npmjs.com/package/cors) Cross Origin Resource Sharing Connect/Express middleware
-* [Node v14.15.0](https://nodejs.org/en/) JavaScript runtime built on Chrome's V8 JavaScript engine.
+* [Node v14](https://nodejs.org/en/) JavaScript runtime built on Chrome's V8 JavaScript engine.
 
 ### Full-Stack
 
@@ -121,7 +120,7 @@ exports.post_note = async (req, res) => {
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working. Deployed. Dependencies updated and no vulnerabilities or error messages
+* Status: Working. Updated june 2021. Deployed.
 * To-Do: Consider alternative to Bootstrap to make app lighter
 
 ## :clap: Inspiration
@@ -129,6 +128,10 @@ exports.post_note = async (req, res) => {
 * [Vue CLI Configuration Reference](https://cli.vuejs.org/config/#devserver-proxy)
 * [Medium article: Express JS— body-parser and why may not need it](https://medium.com/@mmajdanski/express-body-parser-and-why-may-not-need-it-335803cd048c)
 
+## :file_folder: License
+
+* This project is licensed under the terms of the MIT license.
+
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://www.andrewbateman.org) - you are welcome to [send me a message](https://andrewbateman.org/contact)
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
