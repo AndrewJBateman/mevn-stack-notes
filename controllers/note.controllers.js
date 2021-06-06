@@ -12,7 +12,7 @@ exports.get_notes = async (req, res) => {
 	} catch (err) {
 		res.status(500).json({ message: err.message });
 	}
-};                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+};
 
 // add new note to database using POST
 exports.post_note = async (req, res) => {
