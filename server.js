@@ -15,9 +15,7 @@ mongoose.Promise = global.Promise;
 mongoose
 	.connect(mongoUri, {
 		useNewUrlParser: true,
-		useCreateIndex: true,
-		useUnifiedTopology: true,
-		useFindAndModify: false,
+		useUnifiedTopology: true
 	})
 	.then(
 		() => {
