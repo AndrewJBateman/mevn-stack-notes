@@ -1,6 +1,6 @@
 # :zap: MEVN Stack Notes
 
-* This app displays simple text notes in a grid of Bootstrap cards.
+* Displays simple text notes in a grid of Bootstrap cards.
 * Uses the MongoDB, Express, Vue & Node.js (MEVN) stack to perform Create, Read, Update and Delete (CRUD) operations.
 * **Note:** to open web links in a new window use: _ctrl+click on link_
 
@@ -32,6 +32,8 @@
 * Axios used to send/receive data from the MongoDB backend
 * A responsive grid of notes is displayed on the Vue frontend using data-binding and a v-for loop. Once a note is added then the grid of notes is reloaded.
 * There is an app info. page
+* Backend node.js code separated into routes/controller files with a Mongoose model Note schema.
+* Latest Mongoose v6 connection config. used (as of oct. 2021) with no deprecation warnings. Note an old config. will stop any Mongoose-based app from working.
 * The app is deployed on the Heroku 18 stack, based on Ubuntu 18.04
 
 ## :camera: Screenshots
@@ -60,7 +62,7 @@
 ### Backend
 
 * [Express v4](https://expressjs.com/)
-* [Mongoose v5](https://mongoosejs.com/)
+* [Mongoose v6](https://mongoosejs.com/)
 * [cors v2](https://www.npmjs.com/package/cors) Cross Origin Resource Sharing Connect/Express middleware
 * [Node v14](https://nodejs.org/en/) JavaScript runtime built on Chrome's V8 JavaScript engine.
 
@@ -120,7 +122,7 @@ exports.post_note = async (req, res) => {
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working. Updated june 2021. Deployed.
+* Status: Working & deployed.
 * To-Do: Consider alternative to Bootstrap to make app lighter
 
 ## :clap: Inspiration
