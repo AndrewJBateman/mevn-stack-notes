@@ -50,8 +50,6 @@
 ### Frontend
 
 * [Vue framework v2](https://vuejs.org/)
-* [Vue Router v3](https://router.vuejs.org/) the official router for Vue.js
-* [Vue CLI v4](https://cli.vuejs.org/)
 * [Axios v0.21.1](https://github.com/axios/axios), a promise-based http client, used to consume API data.
 * [vue-axios v3](https://www.npmjs.com/package/vue-axios) for integrating axios to Vuejs
 * [Vue DevTools extension for Chrome](https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
@@ -75,7 +73,7 @@
 **Frontend:**
 
 * from `/client` directory: `npm run lint` to lint files
-* `npm run client` to run server.
+* `npm run serve` to run server.
 * Navigate to `http://localhost:8080/`. The app will automatically reload if you change any of the source files.
 * `npm run build` to create build file
 
@@ -122,8 +120,8 @@ exports.post_note = async (req, res) => {
 
 ## :clipboard: Status & To-Do List
 
-* Status: Working & deployed.
-* To-Do: Consider alternative to Bootstrap to make app lighter
+* Status: Working & deployed. Do not update frontend to Vue 3, Bootstrap not compatible with Vue 3. Don't update Axios or you have to add a lot of strange (AxiosPromise) return types
+* To-Do: Consider alternative to Bootstrap to make app lighter & update to Vue 3.
 
 ## :clap: Inspiration
 
