@@ -95,7 +95,7 @@ export default {
     backToNotes() {
       this.$router.push("/");
     },
-    countdown: async () => {
+    countdown() {
       this.remainingCount = this.maxCount - this.note.body.length;
       this.hasError = this.remainingCount < 5;
       this.isDisabled = this.note.title.length < 4 || this.note.body.length < 4;
