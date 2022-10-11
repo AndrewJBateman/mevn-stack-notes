@@ -1,13 +1,16 @@
 <template>
   <div class="container">
     <br />
-    <router-view />
+    <router-view v-slot="{ Component }">
+      <transition name="page">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </div>
 </template>
 
-<style>
-</style>
+<style></style>
 
 <script>
-export default {};
+export default { name: "App" };
 </script>

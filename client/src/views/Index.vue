@@ -24,10 +24,9 @@
         <hr class="m-2" />
         <p class="mb-0 text-center" v-if="this.noteNumber">
           You have
-          <span
-            class="badge badge-pill badge-light"
-            style="font-size: 18px;"
-          >{{ this.noteNumber }}</span>
+          <span class="badge badge-pill badge-light" style="font-size: 18px">{{
+            this.noteNumber
+          }}</span>
           {{ notePlural }}
         </p>
       </div>
@@ -40,7 +39,7 @@
           v-for="note in notes"
           :key="note._id"
         >
-          <div class="card border-primary" style="width: 16rem;">
+          <div class="card border-primary" style="width: 16rem">
             <div class="card-body text-white bg-secondary p-2">
               <h5 class="card-title">{{ note.title }}</h5>
               <p class="card-text">{{ note.body }}</p>
@@ -49,20 +48,26 @@
               <small class="text-muted d-flex justify-content-between">
                 <div class="d-flex align-items-center">
                   <img src="../assets/static/schedule-24px.svg" />
-                  {{ note.date | moment("Do MMMM YYYY") }}
+                  <!-- {{ note.date | moment("Do MMMM YYYY") }} -->
                 </div>
                 <router-link
-                  :to="{name: 'edit', params: { id: note._id }}"
+                  :to="{ name: 'edit', params: { id: note._id } }"
                   class="btn btn-outline-primary btn-sm ml-2 mr-2"
                 >
-                  <img src="../assets/static/pencil-24px.svg" alt="button to edit note" />
+                  <img
+                    src="../assets/static/pencil-24px.svg"
+                    alt="button to edit note"
+                  />
                 </router-link>
                 <button
                   type="button"
                   class="btn btn-outline-danger btn-sm"
                   @click.prevent="deleteNote(note._id)"
                 >
-                  <img src="../assets/static/trash.svg" alt="button to delete note" />
+                  <img
+                    src="../assets/static/trash.svg"
+                    alt="button to delete note"
+                  />
                 </button>
               </small>
             </div>
@@ -82,7 +87,7 @@ export default {
       notePlural: ""
     };
   },
-  created: function() {
+  created: function () {
     this.fetchTodos();
   },
   methods: {
@@ -97,7 +102,7 @@ export default {
 
     deleteNote(id) {
       const uri = `/notes/delete/${id}`;
-      this.axios.delete(uri).then(response => {
+      this.axios.delete(uri).then((response) => {
         this.fetchTodos();
       });
     },
