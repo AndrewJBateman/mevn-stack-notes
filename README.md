@@ -64,10 +64,6 @@
 * [cors v2](https://www.npmjs.com/package/cors) Cross Origin Resource Sharing Connect/Express middleware
 * [Node v14](https://nodejs.org/en/) JavaScript runtime built on Chrome's V8 JavaScript engine.
 
-### Full-Stack
-
-* [Heroku v7](https://www.heroku.com)
-
 ## :floppy_disk: Setup
 
 **Frontend:**
@@ -108,8 +104,6 @@ exports.post_note = async (req, res) => {
 
 ## :cool: Features
 
-* [Heroku deployment](https://mevn-stack-notes.herokuapp.com/) saves user notes using Heroku MongoDB database extension
-* Heroku auto updates deployment when I commit code updates to Github
 * In dev - Front and backends are run with one command using concurrently set up in package.json
 * Display of card array is responsive so they wrap around nicely as screen size changes
 * Simple 'Notes Hub' tells user how many notes there are and lets them navigate to the add note or app info pages
@@ -134,4 +128,4 @@ exports.post_note = async (req, res) => {
 
 ## :envelope: Contact
 
-* Repo created by [ABateman](https://github.com/AndrewJBateman), email: gomezbateman@yahoo.com
+* Repo created by [ABateman](https://github.com/AndrewJBateman), email: `gomezbateman@yahoo.com`
